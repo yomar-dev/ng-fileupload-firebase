@@ -8,6 +8,9 @@ import { UploadComponent } from './components/upload/upload.component';
 // Routes
 import { APP_ROUTES } from './app.routes';
 
+// Services
+import { LoadImagesService } from './services/load-images.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,9 @@ import { APP_ROUTES } from './app.routes';
     BrowserModule,
     APP_ROUTES
   ],
-  providers: [],
+  providers: [
+    LoadImagesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
