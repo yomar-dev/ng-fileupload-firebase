@@ -21,4 +21,8 @@ export class UploadComponent implements OnInit {
     this._loadImages.loadImagesToFirebase(this.files);
   }
 
+  clearFileList() {
+    this.files = [];
+  }
+
 }
