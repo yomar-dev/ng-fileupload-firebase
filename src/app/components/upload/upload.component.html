@@ -2,7 +2,11 @@
   <div class="col-md-4">
     <h3>Select files</h3>
 
-    <div class="drop-zone">
+    <div appNgDropFiles 
+        [files]="files"
+        (mouseOn)="isOnElement = $event"
+        [ngClass]="{ 'file-over': isOnElement }"
+        class="drop-zone">
       <h4>Drag and drop images</h4>
       <img src="assets/drop-images.png" alt="">
     </div>
@@ -10,7 +14,7 @@
 
   <div class="col-md-8">
     <h4>Load files</h4>
-    <button class="btn btn-success">Load to firebase</button>
+    <button (click)="uploadImages()" [disabled]="files.length === 0" class="btn btn-success">Load to firebase</button>
     &nbsp;&nbsp;
     <button class="btn btn-danger">Clear</button>
 
